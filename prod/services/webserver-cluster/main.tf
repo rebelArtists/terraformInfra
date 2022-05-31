@@ -13,7 +13,7 @@ terraform {
 }
 
 module "webserver_cluster_prod" {
-  source = "../../../../modules/services/webserver-cluster"
+  source = "github.com/rebelArtists/terraformModules//services/webserver-cluster?ref=v0.0.1"
 
   cluster_name = "webserver-cluster-prod"
   db_remote_state_bucket = "terraform-data-stores-prod"
