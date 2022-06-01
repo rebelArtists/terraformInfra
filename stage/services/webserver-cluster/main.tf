@@ -13,7 +13,10 @@ terraform {
 }
 
 module "webserver_cluster_stage" {
-  source = "github.com/rebelArtists/terraformModules//services/webserver-cluster?ref=v0.0.1"
+  source = "github.com/rebelArtists/terraformModules//services/webserver-cluster?ref=v0.0.4"
+
+  ami = "ami-07ebfd5b3428b6f4d"
+  server_text = "heyoooo buddy boy"
 
   cluster_name = "webserver-cluster-stage"
   db_remote_state_bucket = "terraform-data-stores-stage"
@@ -22,6 +25,7 @@ module "webserver_cluster_stage" {
   instance_type = "t2.micro"
   min_size = 2
   max_size = 2
+  enable_autoscaling = 0
 }
 
 resource "aws_security_group_rule" "allow_testing_inbound" {
