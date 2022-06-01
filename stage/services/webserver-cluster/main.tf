@@ -13,7 +13,7 @@ terraform {
 }
 
 module "webserver_cluster_stage" {
-  source = "github.com/rebelArtists/terraformModules//services/webserver-cluster?ref=2482a34"
+  source = "github.com/rebelArtists/terraformModules//services/webserver-cluster?ref=v0.0.1"
 
   cluster_name = "webserver-cluster-stage"
   db_remote_state_bucket = "terraform-data-stores-stage"
