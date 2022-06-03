@@ -1,0 +1,5 @@
+bucket  = "terraform-webservers-prod"
+dynamodb_table = "webserver_state_lock_prod"
+region  = "us-east-1"
+key     = "terraform.tfstate"
+encrypt = true
